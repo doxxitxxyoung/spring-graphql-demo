@@ -11,8 +11,16 @@ import java.util.Optional;
 @Service
 public class DrugServiceImpl implements DrugService {
 
+    /*
     @Autowired
     private DrugRepository drugRepository;
+     */
+
+    private final DrugRepository drugRepository;
+
+    public DrugServiceImpl(DrugRepository drugRepository) {
+        this.drugRepository = drugRepository;
+    }
 
     @Override
     public List<Drugs> findAll() {

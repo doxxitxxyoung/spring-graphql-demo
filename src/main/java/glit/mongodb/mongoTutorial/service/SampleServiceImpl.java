@@ -10,8 +10,15 @@ import java.util.Optional;
 
 @Service
 public class SampleServiceImpl implements SampleService {
+    /*
     @Autowired
     private SampleRepository sampleRepository;
+     */
+    private final SampleRepository sampleRepository;
+
+    public SampleServiceImpl(SampleRepository sampleRepository) {
+        this.sampleRepository = sampleRepository;
+    }
 
     @Override
     public List<Samples> findAll() { return sampleRepository.findAll(); }

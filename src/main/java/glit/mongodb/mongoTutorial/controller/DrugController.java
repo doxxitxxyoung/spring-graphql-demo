@@ -1,9 +1,7 @@
 package glit.mongodb.mongoTutorial.controller;
 
 import glit.mongodb.mongoTutorial.model.Drugs;
-import glit.mongodb.mongoTutorial.model.Samples;
 import glit.mongodb.mongoTutorial.service.DrugService;
-import glit.mongodb.mongoTutorial.service.SampleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,8 +14,15 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/drugs")
 public class DrugController {
+    /*
     @Autowired
     private DrugService drugService;
+     */
+
+    private final DrugService drugService;
+    public DrugController(DrugService drugService) {
+        this.drugService = drugService;
+    }
 
     @GetMapping(value = "/")
     public List<Drugs> getAllDrugs(){

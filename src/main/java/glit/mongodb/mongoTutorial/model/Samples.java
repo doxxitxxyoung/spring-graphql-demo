@@ -6,7 +6,23 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
-@Data
+/*
+@Document(collection = "samples")
+public @Data class Samples {
+    @Id
+    private String id;
+    private String drugname;
+    private Integer label;
+    private String smiles;
+    private String cellline;
+    private Float dosage;
+    private Integer duration;
+    private List<Integer> ecfp;
+    private List<Float> gex;
+
+}
+*/
+
 @Document(collection = "samples")
 public class Samples {
     @Id

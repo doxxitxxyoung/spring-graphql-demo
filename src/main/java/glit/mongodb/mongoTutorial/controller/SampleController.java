@@ -14,8 +14,16 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/samples")
 public class SampleController {
+
+    /*
     @Autowired
     private SampleService sampleService;
+     */
+
+    private final SampleService sampleService;
+    public SampleController(SampleService sampleService) {
+        this.sampleService = sampleService;
+    }
 
     @GetMapping(value = "/")
     public List<Samples> getAllSamples() {
