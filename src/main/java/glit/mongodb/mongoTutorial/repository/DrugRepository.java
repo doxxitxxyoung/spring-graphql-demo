@@ -13,6 +13,7 @@ public interface DrugRepository extends MongoRepository<Drugs, String> {
 
     Optional<Drugs> findById(String id);
 
-    Drugs findByDrugname(String drugname);
+//    Drugs findByDrugname(String drugname);
+    List<Drugs> findByDrugname(String drugname);
 }
 

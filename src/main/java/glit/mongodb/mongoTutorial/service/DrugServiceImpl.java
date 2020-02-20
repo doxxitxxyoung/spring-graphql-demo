@@ -33,7 +33,8 @@ public class DrugServiceImpl implements DrugService {
     }
 
     @Override
-    public Drugs findByDrugname(String drugname) {
+//    public Drugs findByDrugname(String drugname) {
+    public List<Drugs> findByDrugname(String drugname) {
         return drugRepository.findByDrugname(drugname);
     }
 

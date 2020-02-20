@@ -26,8 +26,9 @@ public class DrugController {
 
     @GetMapping(value = "/")
     public List<Drugs> getAllDrugs(){
-        return drugService.findAll();
+            return drugService.findAll();
     }
+
 
     @GetMapping(value = "/byId/{id}")
     public Optional<Drugs> getDrugById(@PathVariable("id") String id) {
@@ -35,7 +36,8 @@ public class DrugController {
     }
 
     @GetMapping(value = "/byDrugname/{drugname}")
-    public Drugs getDrugByDrugname(@PathVariable("drugname") String drugname) {
+//    public Drugs getDrugByDrugname(@PathVariable("drugname") String drugname) {
+    public List<Drugs> getDrugByDrugname(@PathVariable("drugname") String drugname) {
         return drugService.findByDrugname(drugname);
     }
 
